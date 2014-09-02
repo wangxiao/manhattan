@@ -1,0 +1,42 @@
+$standard-black: #303134;
+$standard-orange: #fb5f22;
+$standard-green: #88c057;
+$standard-white: #fff;
+$standard-gray: #f3f3f3;
+$min-page-width: 720px; 
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 15px;
+    display: inline-block;
+}
+
+input[type=text] {
+    padding: 3px 6px;
+    font-size: 15px;
+    color: $standard-black;
+}
+
+ul {
+    list-style-type: none;
+}
+.btn {
+    display: inline-block;
+    background-color: $standard-orange;
+    color: $standard-white;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    @include transition(opacity, 0.4s);
+    &:hover {
+        @include opacity(0.8);
+    }
+}

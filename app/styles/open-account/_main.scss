@@ -1,0 +1,184 @@
+.wd-open-account {
+    background-color: $standard-gray;
+    padding: 30px 140px;
+    .content {
+        padding: 20px 30px;
+        min-width: $min-page-width;
+        background-color: #fff;
+        h1 {
+            font-size: 23px;
+        }
+    }
+    .sign-in {
+        .form {
+            width: 600px;
+            margin: 50px auto 0px auto;
+            .item {
+                margin-bottom: 20px;
+                .title {
+                    width: 130px;
+                    text-align: right;
+                    margin-right: 20px;
+                }
+            }
+            .btn {
+                margin-left: 10px;
+            }
+            .submit-btn {
+                margin-left: 200px;
+            }
+        }
+        .warning {
+            width: 80%;
+            margin: 100px auto 40px auto;
+            p {
+                font-size: 12px;
+                line-height: 19px;
+            }
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+    .open-form {
+        .wrapper {
+            margin-top: 50px;
+            .tip {
+                text-align: center;
+                .big {
+                    font-size: 20px;
+                    margin-top: 5px;
+                    color: $standard-green;
+                }
+            }
+            .title-block {
+                position: relative;
+                height: 50px;
+                line-height: 50px;
+                margin: 30px auto 30px auto;
+                background-color: $standard-gray;
+                border: 1px solid #ccc;
+                width: 220px;
+                text-align: center;
+                cursor: pointer;
+                .doing {
+                    position: absolute;
+                    top: 0px;
+                    left: 220px;
+                    width: 140px;
+                    color: $standard-orange;
+                }
+            }
+            .personal-form {
+                width: 527px;
+                margin: 0px auto 20px auto;
+                .item {
+                    margin-bottom: 15px;
+                    .title {
+                        width: 130px;
+                        text-align: right;
+                        margin-right: 20px;
+                    }
+                    input {
+                        width: 206px;
+                    }
+                }
+                .btn {
+                    display: block;
+                    width: 60px;
+                    text-align: center;
+                    margin: 0px auto;
+                }
+            }
+            .real-name {
+                height: 200px;
+                text-align: center;
+                width: 504px;
+                margin: 0 auto;
+                position: relative;
+                .block {
+                    border: 1px solid #888;
+                    height: 140px;
+                    line-height: 140px;
+                    width: 220px;
+                    float: left;
+                    text-align: center;
+                    margin-right: 15px;
+                    margin-left: 15px;
+                    background-color: #ccc;
+                    cursor: pointer;
+                }
+                .btn {
+                    display: block;
+                    width: 60px;
+                    text-align: center;
+                    margin: 0px auto;
+                    position: absolute;
+                    bottom: 0px;
+                    left: 50%;
+                    margin-left: -44px;
+                }
+            }
+            .video-auth {
+                width: 540px;
+                margin: 0 auto;
+                .header {
+                    text-align: center;
+                    .title {
+                        display: inline-block;
+                        border: 1px solid #ccc;
+                        width: 110px;
+                        height: 44px;
+                        line-height: 44px;
+                        margin-left: -5px;
+                        &.current {
+                            border-bottom: none;
+                        }
+                    }
+                }
+                .body {
+                    border: 1px solid #ccc;
+                    padding: 30px 60px 30px 60px;
+                    height: 160px;
+                    .strong {
+                        color: $standard-orange;
+                        margin-left: 5px;
+                    }
+                    .block {
+                        margin-top: 20px;
+                        p {
+                            height: 24px;
+                            line-height: 24px;
+                        }
+                    }
+                    .left {
+                        float: left;
+                    }
+                    .right {
+                        padding-top: 20px;
+                        float: right;
+                    }
+                }
+            }
+            .mail-form {
+                line-height: 30px;
+                width: 560px;
+                margin: 0 auto;
+                text-align: center;
+                margin-bottom: 50px;
+                margin-top: 20px;
+                .strong {
+                    color: $standard-orange;
+                    margin-left: 5px;
+                }
+                p {
+                    margin-left: 10px;
+                    font-size: 18px;
+                }  
+                .courier {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
