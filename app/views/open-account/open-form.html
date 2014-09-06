@@ -6,54 +6,59 @@
             <br>
             <p class="big">完成下列任务即可获赠交易金*</p>
         </div>
-        <div class="title-block" ng-click="personalFrom = true;">
+        <div class="title-block" ng-click="ui.personalFrom = !ui.personalFrom;">
             完善个人资料
             <p class="doing">完成即可获赠 $10</p>
         </div>
-        <div class="personal-form" ng-if="personalFrom">
+        <div class="personal-form" ng-if="ui.personalFrom">
             <div class="item">
                 <p class="title">真实姓名</p>
-                <input type="text">
+                <input type="text" ng-model="person.real_name">
             </div>
             <div class="item">
                 <p class="title">身份证号码</p>
-                <input type="text">
+                <input type="text" ng-model="person.id_no">
             </div>
             <div class="item">
                 <p class="title">电子邮箱</p>
-                <input type="text">
+                <input type="text" ng-model="person.email">
             </div>
             <div class="item">
                 <p class="title">QQ 号码</p>
-                <input type="text">
+                <input type="text" ng-model="person.qq">
             </div>
             <div class="item">
                 <p class="title">住在地址</p>
-                <input type="text">
+                <input type="text" ng-model="person.address">
             </div>
             <div class="item">
                 <p class="title">邀请人手机号</p>
-                <input type="text">
+                <input type="text" ng-model="invite_phone">
             </div>
             <div class="btn">提交</div>
         </div>
-        <div class="title-block" ng-click="realName = true;">
+        <div class="title-block" ng-click="ui.realName = !ui.realName;">
             进行实名认证
             <p class="doing">完成即可获赠 $10</p>
         </div>
-        <div class="real-name" ng-if="realName">
-            <div class="block">上传身份证正面清晰照片</div>
-            <div class="block">上传身份证反面清晰照片</div>
+        <div class="real-name" ng-if="ui.realName">
+            <div class="block">
+                <p>上传身份证正面清晰照片</p>
+                <input type="file">
+            </div>
+            <div class="block">
+                <p>上传身份证反面清晰照片</p>
+            </div>
             <div class="btn">提交</div>
         </div>
-        <div class="title-block" ng-click="videoAuth = true;">
+        <div class="title-block" ng-click="ui.videoAuth = !ui.videoAuth;">
             进行视频认证
             <p class="doing">完成即可获赠 $10</p>
         </div>
-        <div class="video-auth" ng-if="videoAuth">
+        <div class="video-auth" ng-if="ui.videoAuth">
             <div class="header">
-                <div class="title current">微信认证</div>
-                <div class="title">QQ 认证</div>
+                <div class="title" ng-class="{'current': ui.videoSwitch}" ng-click="ui.videoSwitch = true;">微信认证</div>
+                <div class="title" ng-class="{'current': !ui.videoSwitch}" ng-click="ui.videoSwitch = false;">QQ 认证</div>
             </div>
             <div class="body">
                 <div class="left">
@@ -73,11 +78,11 @@
                 </div>
             </div>
         </div>
-        <div class="title-block" ng-click="mailForm = true;">
+        <div class="title-block" ng-click="ui.mailForm = !ui.mailForm;">
             回寄申请表单
             <p class="doing">完成即可获赠 $20</p>
         </div>
-        <div class="mail-form" ng-if="mailForm">
+        <div class="mail-form" ng-if="ui.mailForm">
             <p>请下载并打印您的申请表格：<a class="strong" href="">20140813-123123123321.pdf</a></p>
             <br>
             <p>在表格最后一页签上您的名字后，请发 <span class="strong">顺丰</span> 到付到下面的地址：</p>

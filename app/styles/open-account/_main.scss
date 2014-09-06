@@ -1,6 +1,7 @@
 .wd-open-account {
     background-color: $standard-gray;
     padding: 30px 140px;
+    min-height: 100%;
     .content {
         padding: 20px 30px;
         min-width: $min-page-width;
@@ -20,6 +21,9 @@
                     text-align: right;
                     margin-right: 20px;
                 }
+                .error {
+                    margin-left: 200px;
+                }
             }
             .btn {
                 margin-left: 10px;
@@ -30,7 +34,7 @@
         }
         .warning {
             width: 80%;
-            margin: 100px auto 40px auto;
+            margin: 230px auto 40px auto;
             p {
                 font-size: 12px;
                 line-height: 19px;
@@ -41,6 +45,7 @@
         }
     }
     .open-form {
+        min-height: 620px;
         .wrapper {
             margin-top: 50px;
             .tip {
@@ -122,7 +127,12 @@
             .video-auth {
                 width: 540px;
                 margin: 0 auto;
+                position: relative;
+                margin-top: 120px;
                 .header {
+                    position: absolute;
+                    top: -45px;
+                    left: 164px;
                     text-align: center;
                     .title {
                         display: inline-block;
@@ -131,8 +141,10 @@
                         height: 44px;
                         line-height: 44px;
                         margin-left: -5px;
+                        cursor: pointer;
                         &.current {
-                            border-bottom: none;
+                            cursor: default;
+                            border-bottom: 1px solid #fff;
                         }
                     }
                 }

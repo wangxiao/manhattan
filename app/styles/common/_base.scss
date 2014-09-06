@@ -10,6 +10,17 @@ $min-page-width: 720px;
     padding: 0px;
 }
 
+body {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    .wd-view {
+        height: 100%;
+    }
+}
+
 a {
     text-decoration: none;
 }
@@ -19,7 +30,7 @@ p {
     display: inline-block;
 }
 
-input[type=text] {
+input[type=text], input[type=password] {
     padding: 3px 6px;
     font-size: 15px;
     color: $standard-black;
@@ -39,4 +50,7 @@ ul {
     &:hover {
         @include opacity(0.8);
     }
+}
+.error {
+    color: $standard-orange;
 }
