@@ -1,14 +1,9 @@
 .wd-header {
     min-width: $min-page-width;
     padding: 16px 80px; 
-    background-color: $standard-black;
-    h1 {
-        color: $standard-white;
-        display: inline-block;
-        vertical-align: top;
-        margin-top: 20px;
-        margin-left: 10px;
-    }
+    background-color: $standard-blue;
+    z-index: $top-index;
+    position: relative;
     .product-list {
         float: right;
         display: inline-block;

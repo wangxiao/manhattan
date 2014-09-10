@@ -1,196 +1,354 @@
 .wd-open-account {
-    background-color: $standard-gray;
-    padding: 30px 140px;
-    min-height: 100%;
-    .content {
-        padding: 20px 30px;
-        min-width: $min-page-width;
-        background-color: #fff;
-        h1 {
-            font-size: 23px;
-        }
+    min-width: $min-page-width;
+    position: relative;
+    p {
+        color: $standard-blue;
     }
-    .sign-in {
+    input {
+        width: 260px;
+        height: 50px;
+        font-size: 22px;
+        padding: 3px 20px;
+    }
+    .step1 {
+        z-index: 9;
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        min-height: 400px;
+        background-color: #fff;
+        .banner {
+            background-color: $standard-blue;
+            height: 400px;
+            width: 100%;
+            overflow: hidden;
+            .icon-play {
+                margin: 110px auto 0px auto;
+                display: block;
+            }
+        }
         .form {
-            width: 600px;
-            margin: 50px auto 0px auto;
-            .item {
-                margin-bottom: 20px;
-                .title {
-                    width: 130px;
-                    text-align: right;
-                    margin-right: 20px;
-                }
-                .error {
-                    margin-left: 200px;
-                }
+            text-align: center;
+            padding-top: 50px;
+            input {
+                width: 330px;
+                font-size: 30px;
+                letter-spacing: 10px;
+                padding: 3px 30px;
             }
             .btn {
-                margin-left: 10px;
-            }
-            .submit-btn {
-                margin-left: 200px;
+                width: 160px;
+                height: 44px;
+                line-height: 44px;
+                vertical-align: top;
+                text-align: center;
+                font-size: 22px;
+                margin-left: 8px;            
             }
         }
         .warning {
-            width: 80%;
-            margin: 230px auto 40px auto;
-            p {
+            width: 650px;
+            font-size: 10px;
+            line-height: 17px;
+            margin: 120px auto 30px auto;
+            p, a {
+                color: $standard-gray;
                 font-size: 12px;
-                line-height: 19px;
             }
             a {
                 text-decoration: underline;
             }
         }
     }
-    .open-form {
-        min-height: 620px;
-        .wrapper {
-            margin-top: 50px;
-            .tip {
-                text-align: center;
-                .big {
-                    font-size: 20px;
-                    margin-top: 5px;
-                    color: $standard-green;
-                }
+    /* step1 end */
+    .step2 {
+        z-index: 8;
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        background-color: #fff;
+        .form {
+            margin: 150px auto 0px auto;
+            width: 450px;
+            text-align: center;
+            .btn, input, p {
+                display: block;
+                margin: 0px auto;
             }
-            .title-block {
-                position: relative;
-                height: 50px;
-                line-height: 50px;
-                margin: 30px auto 30px auto;
-                background-color: $standard-gray;
-                border: 1px solid #ccc;
-                width: 220px;
-                text-align: center;
+            input {
+                margin-top: 5px;
+            }
+            p {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+            .btn {
+                width: 150px;
+                height: 40px;
+                font-size: 20px;
+                line-height: 36px;
+                margin-top: 30px;
+            }
+            .retry {
+                color: $standard-orange;
+                margin-left: 5px;
                 cursor: pointer;
-                .doing {
-                    position: absolute;
-                    top: 0px;
-                    left: 220px;
-                    width: 140px;
-                    color: $standard-orange;
+                &:hover {
+                    text-decoration: underline;
                 }
             }
-            .personal-form {
-                width: 527px;
-                margin: 0px auto 20px auto;
-                .item {
-                    margin-bottom: 15px;
-                    .title {
-                        width: 130px;
-                        text-align: right;
-                        margin-right: 20px;
-                    }
-                    input {
-                        width: 206px;
-                    }
+        }
+    }
+    /* step2 end */
+    .step3 {
+        z-index: 7;
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        background-color: #fff;
+        .content {
+            position: relative;
+            height: 460px;
+            padding-top: 150px;
+            text-align: center;
+            p {
+                font-size: 16px;
+                line-height: 25px;
+            }
+            .btn {
+                width: 140px;
+                height: 40px;
+                line-height: 40px;
+                font-size: 19px;
+                margin-top: 70px;
+            }
+            .icon-100 {
+                margin: 15px;
+            }
+            .skip {
+                position: absolute;
+                right: 30px;
+                bottom: 30px;
+                &:hover {
+                    text-decoration: underline;
                 }
+            }
+        }
+    }
+    /* step3 end */
+    .step4 {
+        z-index: 6;
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        height: 460px;
+        text-align: center;
+        padding: 100px 0px;
+        background-color: #fff;
+        .title {
+            font-size: 20px;
+            margin-bottom: 150px;
+        }
+        .steps {
+            width: 700px;
+            margin: 0px auto;
+            .block {
+                margin: 0px 15px;
+                display: inline-block;
                 .btn {
-                    display: block;
-                    width: 60px;
-                    text-align: center;
-                    margin: 0px auto;
-                }
-            }
-            .real-name {
-                height: 200px;
-                text-align: center;
-                width: 504px;
-                margin: 0 auto;
-                position: relative;
-                .block {
-                    border: 1px solid #888;
-                    height: 140px;
-                    line-height: 140px;
-                    width: 220px;
-                    float: left;
-                    text-align: center;
-                    margin-right: 15px;
-                    margin-left: 15px;
-                    background-color: #ccc;
-                    cursor: pointer;
-                }
-                .btn {
-                    display: block;
-                    width: 60px;
-                    text-align: center;
-                    margin: 0px auto;
-                    position: absolute;
-                    bottom: 0px;
-                    left: 50%;
-                    margin-left: -44px;
-                }
-            }
-            .video-auth {
-                width: 540px;
-                margin: 0 auto;
-                position: relative;
-                margin-top: 120px;
-                .header {
-                    position: absolute;
-                    top: -45px;
-                    left: 164px;
-                    text-align: center;
-                    .title {
-                        display: inline-block;
-                        border: 1px solid #ccc;
-                        width: 110px;
-                        height: 44px;
-                        line-height: 44px;
-                        margin-left: -5px;
-                        cursor: pointer;
-                        &.current {
-                            cursor: default;
-                            border-bottom: 1px solid #fff;
-                        }
-                    }
-                }
-                .body {
-                    border: 1px solid #ccc;
-                    padding: 30px 60px 30px 60px;
-                    height: 160px;
-                    .strong {
-                        color: $standard-orange;
-                        margin-left: 5px;
-                    }
-                    .block {
-                        margin-top: 20px;
-                        p {
-                            height: 24px;
-                            line-height: 24px;
-                        }
-                    }
-                    .left {
-                        float: left;
-                    }
-                    .right {
-                        padding-top: 20px;
-                        float: right;
-                    }
-                }
-            }
-            .mail-form {
-                line-height: 30px;
-                width: 560px;
-                margin: 0 auto;
-                text-align: center;
-                margin-bottom: 50px;
-                margin-top: 20px;
-                .strong {
-                    color: $standard-orange;
-                    margin-left: 5px;
-                }
-                p {
-                    margin-left: 10px;
+                    height: 40px;
+                    width: 160px;
+                    line-height: 40px;
                     font-size: 18px;
-                }  
-                .courier {
-                    margin-top: 20px;
+                    margin-top: 30px;
+                    &.disable {
+                        background-color: #ecedec;
+                        color: #000;
+                        cursor: default;
+                    }
                 }
             }
+        }
+        .skip {
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    /* step4 end */
+    .step5 {
+        z-index: 5;
+        position: relative;
+        top: 0px;
+        width: 100%;
+        background-color: #fff;
+        .back {
+            position: absolute;
+            top: 50px;
+            left: 100px;
+            cursor: pointer;
+            line-height: 36px;
+            p {
+                vertical-align: top;
+            }
+        }
+        .form {
+            padding: 100px 0px;
+            text-align: center;
+            input {
+                width: 350px;
+                margin-bottom: 8px;
+            }
+            .btn {
+                width: 140px;
+                height: 40px;
+                line-height: 40px;
+                font-size: 18px;
+                margin-top: 30px;                
+            }
+        }
+    }
+    /* step5 end */
+    .step6 {
+        z-index: 4;
+        position: relative;
+        top: 0px;
+        width: 100%;
+        text-align: center;
+        height: 460px;
+        padding-top: 150px;
+        background-color: #fff;
+        text-align: center;
+        .skip {
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            &:hover {
+                text-decoration: underline;
+            }            
+        }
+        .icon-200 {
+            margin: 15px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 25px;
+        }
+        .btn {
+            width: 140px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 19px;
+            margin-top: 50px;
+        }
+    }
+    /* step6 end */
+    .step7 {
+        z-index: 3;
+        position: relative;
+        top: 0px;
+        width: 100%;
+        text-align: center;
+        background-color: #fff;
+        padding: 90px 0px;
+        .back {
+            position: absolute;
+            top: 50px;
+            left: 100px;
+            cursor: pointer;
+            line-height: 36px;
+            p {
+                vertical-align: top;
+            }
+        }
+        .title {
+            font-size: 20px;
+            margin-bottom: 50px;
+        }
+        .btn {
+            height: 40px;
+            line-height: 40px;
+            width: 140px;
+            font-size: 18px;
+            margin-top: 60px;
+        }
+    }
+    /* step7 end*/
+    .step8 {
+        z-index: 2;
+        position: relative;
+        top: 0px;
+        width: 100%;
+        text-align: center;
+        height: 460px;
+        padding-top: 150px;
+        text-align: center;
+        background-color: #fff;
+        .skip {
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            &:hover {
+                text-decoration: underline;
+            }            
+        }
+        .icon-300 {
+            margin: 15px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 25px;
+        }
+        .btn {
+            width: 140px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 19px;
+            margin-top: 50px;
+        }
+    }
+    /* step8 end*/
+    .step9 {
+        z-index: 1;
+        position: relative;
+        top: 0px;
+        width: 100%;
+        text-align: center;
+        padding: 90px 0px;
+        background-color: #fff;
+        .back {
+            position: absolute;
+            top: 50px;
+            left: 100px;
+            cursor: pointer;
+            line-height: 36px;
+            p {
+                vertical-align: top;
+            }
+        }
+        .content {
+            p {
+                font-size: 19px;
+                line-height: 30px;
+                &.small {
+                    font-size: 10px;
+                }
+            }
+            .btn {
+                width: 140px;
+                height: 40px;
+                line-height: 40px;
+                font-size: 19px;
+                margin-top: 50px;
+            }  
+            img {
+                width: 140px;
+                height: 180px;
+                margin: 15px;
+            }          
         }
     }
 }

@@ -1,2 +1,118 @@
 <div wd-header></div>
-<div class="wd-open-account" ng-include="url"></div>
+<div class="wd-open-account">
+    <div class="step1" wd-show-step data-step="1">
+        <div class="banner">
+            <i class="icon-play"></i>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="请填入您的手机号">
+            <div class="btn" ng-click="nextStep();">即刻开户</div>
+        </div>
+        <div class="warning">
+            <p>1. 注册原子证券一账通代表您接受并同意原子证券金融及其下属网站相关 <a href="">用户使用条款</a> 、 <a href="">隐私协议</a> 、<a href="">客户协议书</a></p>
+            <p>2. 注册原子证券一账通代表您确认您是该账户的最终且唯一的受益拥有人，且您个人与原子证券金融及原子证券金融联运或旗下公司并无雇佣关系，且您非联合交易所值交易所参与者或证监会的持牌人或注册人的董事、雇员或认可人士</p>
+            <p>3. 注册原子证券一账代表您确认该账户由您本人开设，表示您没有在富途证券国际(香港)有限公司开设，由本人或本人代表他人、团体或公司实益持有、拥有或运作、或本人拥有直接或间接利益的帐户（无论个人、联名、公司、托管）</p>
+        </div>
+    </div>
+    <!-- step1 end -->
+    <div class="step2" wd-show-step data-step="2">
+        <div class="form">
+            <p>如未收到短信验证可尝试<span class="retry">重新发送</span></p>
+            <input type="text" placeholder="短信验证码">
+            <input type="text" placeholder="设置您的登陆密码">
+            <div class="btn" ng-click="nextStep();">提交开通</div>
+        </div>
+    </div>
+    <!-- step2 end -->
+    <div class="step3" wd-show-step data-step="3">
+        <div class="content">
+            <p>当前账户余额</p><br>
+            <i class="icon-100"></i><br>
+            <p>您已成功注册原子金融并获得 <span class="strong">100 美元</span> 赠金</p><br>
+            <p>开通真实交易账号即可使用赠金进行交易，并可额外获得 <span class="strong">500 美元</span> 赠金</p><br>
+            <div class="btn" ng-click="nextStep();">开通真实交易</div>
+            <a class="skip" href="">跳过，进入模拟交易</a>
+        </div>
+    </div>
+    <!-- step3 end -->
+    <div class="step4" wd-show-step data-step="4">
+        <div class="title">仅需 3 步即可开通真实交易</div>
+        <div class="steps">
+            <div class="block">
+                <i class="icon-text-doc"></i><br>
+                <div class="btn" ng-click="nextStep();">补全个人信息</div>
+            </div>
+            <div class="block">
+                <i class="icon-id-card"></i><br>
+                <div class="btn disable">开通实名认证</div>
+            </div>
+            <div class="block">
+                <i class="icon-polaroids"></i><br>
+                <div class="btn disable">申请上门见证</div>
+            </div>
+        </div>
+        <a class="skip" href="">跳过，进入模拟交易</a>
+    </div>
+    <!-- step4 end -->
+    <div class="step5" wd-show-step data-step="5">
+        <div class="back">
+            <i class="icon-up"></i>
+            <p>返回</p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="真实姓名"><br>
+            <input type="text" placeholder="身份证号码"><br>
+            <input type="text" placeholder="QQ 号码"><br>
+            <input type="text" placeholder="电邮地址"><br>
+            <p><a href="">我有邀请码</a>输入邀请码即可额外获得 <span class="strong">200 美元</span> 赠金</p><br>
+            <div class="btn" ng-click="nextStep();">提交资料</div>
+        </div>
+    </div>
+    <!-- step5 end -->
+    <div class="step6" wd-show-step data-step="6">
+        <p>当前账户余额</p><br>
+        <i class="icon-200"></i><br>
+        <p>您已完成补全个人资料并获得 <span class="strong">100 美元</span> 赠金</p><br>
+        <p>完成实名认证即可获得 <span class="strong">100 美元</span> 赠金</p><br>
+        <p>距离完成开通真实交易资格还差 2 步</p><br>
+        <div class="btn" ng-click="nextStep();">开通实名认证</div>
+        <a class="skip" href="">跳过，进入模拟交易</a>
+    </div>
+    <!-- step6 end -->
+    <div class="step7" wd-show-step data-step="7">
+        <div class="back">
+            <i class="icon-up"></i>
+            <p>返回</p>
+        </div>
+        <p class="title">请上传您的身份证正反面</p><br>
+        <i class="icon-id-card-front"></i>
+        <i class="icon-id-card-back"></i><br>
+        <div class="btn" ng-click="nextStep();">提交资料</div>
+    </div>
+    <!-- step7 end -->
+    <div class="step8" wd-show-step data-step="8">
+        <p>当前账户余额</p><br>
+        <i class="icon-300"></i><br>
+        <p>您已完成补全个人资料并获得 <span class="strong">100 美元</span> 赠金</p><br>
+        <p>完成见证即可获得 <span class="strong">500 美元</span> 赠金</p><br>
+        <p>距离完成开通真实交易资格还差 1 步</p><br>
+        <div class="btn" ng-click="nextStep();">申请上门见证</div>
+        <a class="skip" href="">跳过，进入模拟交易</a>
+    </div>
+    <!-- step8 end -->
+    <div class="step9" wd-show-step data-step="9">
+        <div class="back">
+            <i class="icon-up"></i>
+            <p>返回</p>
+        </div>
+        <div class="content">
+            <p>我们已收到您的见证申请，我们的工作人员将会在 2 小时内与您联系</p><br>
+            <p>工号 <span class="strong">1331 王晓晓</span> 将是您的见证人</p><br>
+            <img src=""><br>
+            <p>联系电话：<span class="strong">131-2312-1231</span></p><br>
+            <p class="small">在开始见证前，请您仔细核对您的见证人是否为其本人，以防信息泄露</p><br>
+            <div class="btn">开始第一次交易</div>
+        </div>
+    </div>
+    <!-- step9 end -->
+</div>

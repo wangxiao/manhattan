@@ -1,9 +1,19 @@
-$standard-black: #303134;
-$standard-orange: #fb5f22;
+/* 主要基色 */
+$standard-blue: #242447;
+
+/* 基础色 */
+$standard-black: #000000;
+$standard-white: #ffffff;
+$standard-violet: #656f9e;
+$standard-gray: #bababa;
+$standard-orange: #faaf46;
+$standard-red: #ed7161;
 $standard-green: #88c057;
-$standard-white: #fff;
-$standard-gray: #f3f3f3;
+
 $min-page-width: 720px; 
+
+/* z-index */
+$top-index: 200;
 
 * {
     margin: 0px;
@@ -44,13 +54,13 @@ ul {
     background-color: $standard-orange;
     color: $standard-white;
     padding: 8px 14px;
-    border-radius: 5px;
+    border-radius: 3px;
     cursor: pointer;
     @include transition(opacity, 0.4s);
     &:hover {
         @include opacity(0.8);
     }
 }
-.error {
+.error, .strong {
     color: $standard-orange;
 }
