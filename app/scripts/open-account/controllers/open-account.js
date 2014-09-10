@@ -10,6 +10,12 @@ angular.module('manhattanApp')
             step: $scope.step
         });
     };
+    $scope.prevStep = function() {
+        $scope.step --;
+        $scope.$emit('wd-show-step', {
+            step: $scope.step
+        });
+    };
     // route();
     // // 正在验证手机
     // $scope.ui = {
