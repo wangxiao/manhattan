@@ -12,6 +12,7 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="base/webuploader-0.1.5/webuploader.css">
     <!-- endbuild -->
   </head>
   <body ng-app="manhattanApp">
@@ -40,13 +41,16 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <!-- endbower -->
+    <script src="base/webuploader-0.1.5/webuploader.js"></script>
     <!-- endbuild -->
-
+    
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/common/directives/header.js"></script>
+        <script src="scripts/common/directives/upload-form.js"></script>
         <script src="scripts/common/services/config.js"></script>
         <script src="scripts/open-account/controllers/open-account.js"></script>
+        <script src="scripts/open-account/controllers/login.js"></script>
         <script src="scripts/open-account/services/account.js"></script>
         <script src="scripts/open-account/directives/show-step.js"></script>
         <!-- endbuild -->

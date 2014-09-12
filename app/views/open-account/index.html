@@ -1,11 +1,11 @@
 <div wd-header></div>
-<div class="wd-open-account">
+<div class="wd-open-account" ng-keyDown="keyDown($event)">
     <div class="step1" wd-show-step data-step="1">
         <div class="banner">
             <i class="icon-play"></i>
         </div>
         <div class="form">
-            <input type="text" placeholder="请填入您的手机号">
+            <input ng-class="{error: signIn.uiPhoneError}" type="text" placeholder="请填入您的手机号" autofocus ng-model="signIn.phone">
             <div class="btn" ng-click="nextStep();">即刻开户</div>
         </div>
         <div class="warning">
@@ -18,8 +18,8 @@
     <div class="step2" wd-show-step data-step="2">
         <div class="form">
             <p>如未收到短信验证可尝试<span class="retry">重新发送</span></p>
-            <input type="text" placeholder="短信验证码">
-            <input type="text" placeholder="设置您的登陆密码">
+            <input ng-class="{error: signIn.uiVerifyCodeError}" type="text" placeholder="短信验证码" ng-model="signIn.verify_code">
+            <input ng-class="{error: signIn.uiPasswordError}" type="text" placeholder="设置您的登陆密码" ng-model="signIn.password">
             <div class="btn" ng-click="nextStep();">提交开通</div>
         </div>
     </div>
@@ -60,11 +60,11 @@
             <p>返回</p>
         </div>
         <div class="form">
-            <input type="text" placeholder="真实姓名"><br>
-            <input type="text" placeholder="身份证号码"><br>
-            <input type="text" placeholder="QQ 号码"><br>
-            <input type="text" placeholder="电邮地址"><br>
-            <p><a href="">我有邀请码</a>输入邀请码即可额外获得 <span class="strong">200 美元</span> 赠金</p><br>
+            <input ng-class="{error: person.uiRealNameError}" type="text" placeholder="真实姓名" ng-model="person.real_name"><br>
+            <input ng-class="{error: person.uiIdNoError}" type="text" placeholder="身份证号码" ng-model="person.id_no"><br>
+            <input ng-class="{error: person.uiQQError}" type="text" placeholder="QQ 号码" ng-model="person.qq"><br>
+            <input ng-class="{error: person.uiEmailError}" type="text" placeholder="电邮地址" ng-model="person.email"><br>
+            <p><a href="">我有邀请码</a> 输入邀请码即可额外获得 <span class="strong">200 美元</span> 赠金</p><br>
             <div class="btn" ng-click="nextStep();">提交资料</div>
         </div>
     </div>
@@ -85,8 +85,13 @@
             <p>返回</p>
         </div>
         <p class="title">请上传您的身份证正反面</p><br>
-        <i class="icon-id-card-front"></i>
-        <i class="icon-id-card-back"></i><br>
+        <div class="left" wd-upload-form>
+            <i class="icon-id-card-front"></i>
+        </div>
+        <div class="right" wd-upload-form>
+            <i class="icon-id-card-back"></i><br>
+        </div>
+        <br>
         <div class="btn" ng-click="nextStep();">提交资料</div>
     </div>
     <!-- step7 end -->

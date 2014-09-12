@@ -4,11 +4,27 @@
     p {
         color: $standard-blue;
     }
-    input {
+    input[type=text] {
         width: 260px;
         height: 50px;
         font-size: 22px;
         padding: 3px 20px;
+    }
+    .login-form {
+        text-align: center;
+        padding-top: 100px;
+        input {
+            margin-bottom: 10px;
+        }
+        .btn {
+            width: 160px;
+            height: 44px;
+            line-height: 44px;
+            vertical-align: top;
+            text-align: center;
+            font-size: 22px;
+            margin-top: 10px;
+        }
     }
     .step1 {
         z-index: 9;
@@ -19,17 +35,17 @@
         background-color: #fff;
         .banner {
             background-color: $standard-blue;
-            height: 400px;
+            height: 340px;
             width: 100%;
             overflow: hidden;
             .icon-play {
-                margin: 110px auto 0px auto;
+                margin: 80px auto 0px auto;
                 display: block;
             }
         }
         .form {
             text-align: center;
-            padding-top: 50px;
+            padding-top: 80px;
             input {
                 width: 330px;
                 font-size: 30px;
@@ -271,6 +287,18 @@
         .title {
             font-size: 20px;
             margin-bottom: 50px;
+        }
+        .left, .right {
+            position: relative;
+            display: inline-block;
+            input[type=file] {
+                cursor: pointer;
+                width: 233px;
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                padding: 210px 45px 10px 40px;
+            }
         }
         .btn {
             height: 40px;

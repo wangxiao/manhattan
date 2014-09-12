@@ -17,6 +17,10 @@ $routeProvider
         templateUrl: '../views/open-account/index.html',
         controller: 'openAccountCtrl'
     })
+    .when('/login', {
+        templateUrl: '../views/open-account/login.html',
+        controller: 'loginCtrl'
+    })
     .otherwise({
         redirectTo: '/'
     });
