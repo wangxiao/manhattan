@@ -2,7 +2,7 @@
 
 angular.module('manhattanApp')
 .controller('openAccountCtrl', function ($scope, wdAccount, $timeout, wdConfig) {
-    $scope.step = 6;
+    $scope.step = 1;
     $scope.uploadUrl = wdConfig.apiUrl + '/upload';
     $scope.signIn = {
         phone: '',

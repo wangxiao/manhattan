@@ -10,8 +10,6 @@ $standard-orange: #faaf46;
 $standard-red: #ed7161;
 $standard-green: #88c057;
 
-$min-page-width: 720px; 
-
 /* z-index */
 $top-index: 200;
 
@@ -26,9 +24,6 @@ body {
     right: 0px;
     left: 0px;
     bottom: 0px;
-    .wd-view {
-        min-height: 100%;
-    }
 }
 
 a {
@@ -64,7 +59,7 @@ ul {
     display: inline-block;
     background-color: $standard-orange;
     color: $standard-white;
-    padding: 8px 14px;
+    padding: 8px 20px;
     border-radius: 3px;
     cursor: pointer;
     @include transition(opacity, 0.4s);

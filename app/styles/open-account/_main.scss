@@ -1,14 +1,20 @@
 .wd-open-account {
-    min-width: $min-page-width;
     position: relative;
     p {
         color: $standard-blue;
     }
     input[type=text] {
-        width: 260px;
-        height: 50px;
+        width: 70%;
+        height: 40px;
         font-size: 22px;
         padding: 3px 20px;
+    }
+    .btn {
+        height: 26px;
+        line-height: 26px;
+        vertical-align: top;
+        text-align: center;
+        font-size: 18px;
     }
     .login-form {
         text-align: center;
@@ -17,12 +23,6 @@
             margin-bottom: 10px;
         }
         .btn {
-            width: 160px;
-            height: 44px;
-            line-height: 44px;
-            vertical-align: top;
-            text-align: center;
-            font-size: 22px;
             margin-top: 10px;
         }
     }
@@ -33,40 +33,18 @@
         width: 100%;
         min-height: 400px;
         background-color: #fff;
-        .banner {
-            background-color: $standard-blue;
-            height: 340px;
-            width: 100%;
-            overflow: hidden;
-            .icon-play {
-                margin: 80px auto 0px auto;
-                display: block;
-            }
-        }
         .form {
             text-align: center;
-            padding-top: 80px;
-            input {
-                width: 330px;
-                font-size: 30px;
-                letter-spacing: 10px;
-                padding: 3px 30px;
-            }
+            padding-top: 40px;
             .btn {
-                width: 160px;
-                height: 44px;
-                line-height: 44px;
-                vertical-align: top;
-                text-align: center;
-                font-size: 22px;
-                margin-left: 8px;            
+                margin-top: 30px;
             }
         }
         .warning {
-            width: 650px;
+            width: 80%;
             font-size: 10px;
             line-height: 17px;
-            margin: 120px auto 30px auto;
+            margin: 60px auto 30px auto;
             p, a {
                 color: $standard-gray;
                 font-size: 12px;
@@ -82,13 +60,12 @@
         position: absolute;
         top: 0px;
         width: 100%;
-        height: 650px;
+        height: 400px;
         background-color: #fff;
         .form {
-            margin: 150px auto 0px auto;
-            width: 450px;
+            margin: 70px auto 0px auto;
             text-align: center;
-            .btn, input, p {
+            input, p {
                 display: block;
                 margin: 0px auto;
             }
@@ -100,10 +77,6 @@
                 margin-bottom: 20px;
             }
             .btn {
-                width: 150px;
-                height: 40px;
-                font-size: 20px;
-                line-height: 36px;
                 margin-top: 30px;
             }
             .retry {
@@ -122,22 +95,16 @@
         position: absolute;
         top: 0px;
         width: 100%;
-        height: 650px;
         background-color: #fff;
         .content {
             position: relative;
-            height: 460px;
-            padding-top: 150px;
+            padding: 70px 30px 0px 30px;
             text-align: center;
             p {
                 font-size: 16px;
                 line-height: 25px;
             }
             .btn {
-                width: 140px;
-                height: 40px;
-                line-height: 40px;
-                font-size: 19px;
                 margin-top: 70px;
             }
             .icon-100 {
