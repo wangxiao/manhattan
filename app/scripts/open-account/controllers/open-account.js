@@ -1,24 +1,46 @@
 'use strict';
 
 angular.module('manhattanApp')
-.controller('openAccountCtrl', function ($scope, wdAccount, $timeout, wdConfig) {
-    $scope.step = 6;
+.controller('openAccountCtrl', function ($scope, wdAccount, $timeout, wdConfig, wdStorage) {
+    $scope.step = 1;
+    // 完成了哪一部开户填表
+    $scope.finishStep = wdStorage.item('open-account-finish-step') || 1;
     $scope.uploadUrl = wdConfig.apiUrl + '/upload';
     $scope.signIn = {
         phone: '',
         verify_code: '',
         password: '',
-        uiPhoneError: false,
-        uiVerifyCodeError: false,
-        uiPasswordError: false
+        uiPhoneError: '',
+        uiVerifyCodeError: '',
+        uiPasswordError: ''
     };
 
+    $scope.login = {
+        phone: '',
+        password: ''
+    };
+
+    $scope.person = {
+        real_name: '',
+        id_no: '',
+        email: '',
+        address: '',
+        invite_phone: '',
+        qq: '',
+        uiRealNameError: '',
+        uiIdNoError: '',
+        uiEmailError: '',
+        uiAddressError: '',
+        uiInvitePhoneError: '',
+        uiQQError: ''
+    };
+    
     function checkPhone() {
         if (!$scope.signIn.phone) {
             $scope.signIn.uiPhoneError = '手机号不能为空';
             return false;
         } else {
-            $scope.signIn.uiPhoneError = false;
+            $scope.signIn.uiPhoneError = '';
             return true;
         }
     }
@@ -28,7 +50,7 @@ angular.module('manhattanApp')
             $scope.signIn.uiVerifyCodeError = '验证码不能为空';
             return false;
         } else {
-            $scope.signIn.uiVerifyCodeError = false;
+            $scope.signIn.uiVerifyCodeError = '';
             return true;
         }
     }
@@ -38,7 +60,7 @@ angular.module('manhattanApp')
             $scope.signIn.uiPasswordError = '密码不能为空';
             return false;
         } else {
-            $scope.signIn.uiPasswordError = false;
+            $scope.signIn.uiPasswordError = '';
             return true;
         }
     }
@@ -59,27 +81,12 @@ angular.module('manhattanApp')
         });
     };
 
-    $scope.person = {
-        real_name: '',
-        id_no: '',
-        email: '',
-        address: '',
-        invite_phone: '',
-        qq: '',
-        uiRealNameError: false,
-        uiIdNoError: false,
-        uiEmailError: false,
-        uiAddressError: false,
-        uiInvitePhoneError: false,
-        uiQQError: false
-    };
-
     function checkRealName() {
         if (!$scope.person.real_name) {
             $scope.person.uiRealNameError = '真实姓名不能为空';
             return false;
         } else {
-            $scope.person.uiRealNameError = false;
+            $scope.person.uiRealNameError = '';
             return true;
         }
     }
@@ -89,7 +96,7 @@ angular.module('manhattanApp')
             $scope.person.uiIdNoError = '请填写身份证号码';
             return false;
         } else {
-            $scope.person.uiIdNoError = false;
+            $scope.person.uiIdNoError = '';
             return true;
         }
     }
@@ -99,7 +106,7 @@ angular.module('manhattanApp')
             $scope.person.uiEmailError = '请填写电子邮件地址';
             return false;
         } else {
-            $scope.person.uiEmailError = false;
+            $scope.person.uiEmailError = '';
             return true;
         }
     }
@@ -109,15 +116,10 @@ angular.module('manhattanApp')
             $scope.person.uiQQError = '请填写 QQ 号码';
             return false;
         } else {
-            $scope.person.uiQQError = false;
+            $scope.person.uiQQError = '';
             return true;
         }
     }
-
-    $scope.login = {
-        phone: '',
-        password: ''
-    };
 
     $scope.loginFun = function() {
         wdAccount.login($scope.login).then(function(data) {
@@ -146,7 +148,8 @@ angular.module('manhattanApp')
                 }
             break;
             case 5:
-                if (checkRealName() && checkIdNo() && checkQQ() && checkEmail()) {
+                if (checkRealName() && checkIdNo() && checkEmail()) {
+                    $scope.finishStep = 2;
                     nextStep();
                 } else {
                     return false;
@@ -154,25 +157,31 @@ angular.module('manhattanApp')
             break;
             case 7:
                 $scope.$emit('wd-upload-form-submit');
-                $scope.$on('wd-upload-form-success', function() {
+                // $scope.$on('wd-upload-form-success', function() {
                     nextStep();
-                });
+                    $scope.finishStep = 3;
+                // });
             break;
             default:
                 nextStep();
             break;
-        }        
+        }
+    };
+
+    $scope.goToStep = function(step) {
+        $scope.step = step;
+        $scope.$emit('wd-show-step', {
+            step: $scope.step
+        });
     };
 
     function nextStep() {
         $scope.step ++;
-        $scope.$emit('wd-show-step', {
-            step: $scope.step
-        });
+        $scope.goToStep($scope.step);
     }
 
     $scope.prevStep = function() {
-        $scope.step --;
+        $scope.step = 4;
         $scope.$emit('wd-show-step', {
             step: $scope.step
         });
@@ -184,4 +193,8 @@ angular.module('manhattanApp')
         }
     };
 
+    function changeFinishStep(step) {
+        $scope.finishStep = step;
+        wdStorage.item('open-account-finish-step', step);
+    }
 });

@@ -7,6 +7,8 @@
         <div class="form">
             <input ng-class="{error: signIn.uiPhoneError}" type="text" placeholder="请填入您的手机号" autofocus ng-model="signIn.phone">
             <div class="btn" ng-click="nextStep();">即刻开户</div>
+            <br>
+            <p class="error">{{signIn.uiPhoneError}}</p>
         </div>
         <div class="warning">
             <p>1. 注册原子证券一账通代表您接受并同意原子证券金融及其下属网站相关 <a href="">用户使用条款</a> 、 <a href="">隐私协议</a> 、<a href="">客户协议书</a></p>
@@ -20,6 +22,7 @@
             <p>如未收到短信验证可尝试<span class="retry">重新发送</span></p>
             <input ng-class="{error: signIn.uiVerifyCodeError}" type="text" placeholder="短信验证码" ng-model="signIn.verify_code">
             <input ng-class="{error: signIn.uiPasswordError}" type="text" placeholder="设置您的登陆密码" ng-model="signIn.password">
+            <p class="error">{{signIn.uiVerifyCodeError}} {{signIn.uiPasswordError}}</p>
             <div class="btn" ng-click="nextStep();">提交开通</div>
         </div>
     </div>
@@ -40,15 +43,15 @@
         <div class="steps">
             <div class="block">
                 <i class="icon-text-doc"></i><br>
-                <div class="btn" ng-click="nextStep();">补全个人信息</div>
+                <div class="btn" ng-class="{disable: finishStep !== 1}" ng-click="goToStep(5);">补全个人信息</div>
             </div>
             <div class="block">
                 <i class="icon-id-card"></i><br>
-                <div class="btn disable">开通实名认证</div>
+                <div class="btn" ng-class="{disable: finishStep !== 2}" ng-click="goToStep(7);">开通实名认证</div>
             </div>
             <div class="block">
                 <i class="icon-polaroids"></i><br>
-                <div class="btn disable">申请上门见证</div>
+                <div class="btn" ng-class="{disable: finishStep !== 3}" ng-click="goToStep(9);">申请上门见证</div>
             </div>
         </div>
         <a class="skip" href="">跳过，进入模拟交易</a>
@@ -62,9 +65,11 @@
         <div class="form">
             <input ng-class="{error: person.uiRealNameError}" type="text" placeholder="真实姓名" ng-model="person.real_name"><br>
             <input ng-class="{error: person.uiIdNoError}" type="text" placeholder="身份证号码" ng-model="person.id_no"><br>
-            <input ng-class="{error: person.uiQQError}" type="text" placeholder="QQ 号码" ng-model="person.qq"><br>
             <input ng-class="{error: person.uiEmailError}" type="text" placeholder="电邮地址" ng-model="person.email"><br>
+            <input ng-class="{error: person.uiQQError}" type="text" placeholder="QQ 号码" ng-model="person.qq"><br>
             <p><a href="">我有邀请码</a> 输入邀请码即可额外获得 <span class="strong">200 美元</span> 赠金</p><br>
+            <p class="error">{{person.uiRealNameError}} {{person.uiIdNoError}} {{person.uiQQError}} {{person.uiEmailError}}</p>
+            <br>
             <div class="btn" ng-click="nextStep();">提交资料</div>
         </div>
     </div>
@@ -85,10 +90,10 @@
             <p>返回</p>
         </div>
         <p class="title">请上传您的身份证正反面</p><br>
-        <div class="left" wd-upload-form>
+        <div class="left" wd-upload-form data-form-data="{face: 'front'}">
             <i class="icon-id-card-front"></i>
         </div>
-        <div class="right" wd-upload-form>
+        <div class="right" wd-upload-form data-form-data="{face: 'back'}">
             <i class="icon-id-card-back"></i><br>
         </div>
         <br>

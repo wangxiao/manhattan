@@ -72,6 +72,9 @@ ul {
         @include opacity(0.8);
     }
 }
-.error, .strong {
+.strong {
     color: $standard-orange;
+}
+.error {
+    color: $standard-red;
 }

@@ -3,6 +3,13 @@
     position: relative;
     p {
         color: $standard-blue;
+        &.error {
+            color: $standard-red;
+            font-size: 16px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
     }
     input[type=text] {
         width: 260px;
@@ -48,9 +55,11 @@
             padding-top: 80px;
             input {
                 width: 330px;
-                font-size: 30px;
-                letter-spacing: 10px;
+                letter-spacing: 2px;
                 padding: 3px 30px;
+            }
+            p.error {
+                width: 580px;
             }
             .btn {
                 width: 160px;
@@ -98,13 +107,16 @@
             p {
                 font-size: 16px;
                 margin-bottom: 20px;
+                &.error {
+                    margin: 0px;
+                }
             }
             .btn {
                 width: 150px;
                 height: 40px;
                 font-size: 20px;
                 line-height: 36px;
-                margin-top: 30px;
+                margin-top: 3px;
             }
             .retry {
                 color: $standard-orange;
@@ -226,7 +238,7 @@
                 height: 40px;
                 line-height: 40px;
                 font-size: 18px;
-                margin-top: 30px;                
+                margin-top: 3px;                
             }
         }
     }
@@ -291,13 +303,9 @@
         .left, .right {
             position: relative;
             display: inline-block;
-            input[type=file] {
-                cursor: pointer;
-                width: 233px;
-                position: absolute;
-                left: 0px;
-                top: 0px;
-                padding: 210px 45px 10px 40px;
+            margin: 0px 10px;
+            &:hover {
+                @include opacity(0.7);
             }
         }
         .btn {

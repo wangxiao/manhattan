@@ -22,7 +22,7 @@ return {
             } else {
                 $element.animate({
                     top: 0
-                }, height/speed, 'linear');                
+                }, height/speed, 'linear');
             }
         });
     }

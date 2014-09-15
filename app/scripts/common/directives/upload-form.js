@@ -6,11 +6,11 @@ return {
     restrict: 'A',
     scope: false,
     replace: true,
-    controller: ['$scope', 
+    controller: ['$scope',
     function($scope) {
     }],
     link: function($scope, $element, $attrs, $controller) {
-        
+
         // 初始化Web Uploader
         var uploader = $window.WebUploader.create({
 
@@ -34,25 +34,18 @@ return {
                 mimeTypes: 'image/*'
             },
 
-            formData: {
-                face: 'front'
-            }
+            formData: $attrs.formData
         });
 
-        // $element.attr('enctype', 'multipart/form-data');
-        // var input = $element.find('input[type=file]');
+        // 文件上传成功，给item添加成功class, 用样式标记上传成功。
+        uploader.on( 'uploadSuccess', function() {
+            $scope.$emit('wd-upload-form-success');
+        });
 
-        // $scope.$on('wd-upload-form-submit', function() {
-        //     var val = input.eq(0).val();
-        //     if (val) {
-        //         input.removeClass('error');
-        //         $element.submit();
-        //         $scope.$emit('wd-upload-form-success');
-        //     } else {
-        //         input.addClass('error');
-        //         $scope.$emit('wd-upload-form-empty');
-        //     }
-        // });
+        // 文件上传失败，显示上传出错。
+        uploader.on( 'uploadError', function( file ) {
+            $scope.$emit('wd-upload-form-error');
+        });
     }
 };
 });
